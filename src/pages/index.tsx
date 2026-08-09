@@ -9,6 +9,7 @@ import ThumbCard from '@site/src/components/ui/ThumbCard';
 import ColoringBookSection from '@site/src/components/content/ColoringBookSection';
 import TestimonialSection from '@site/src/components/content/TestimonialSection';
 import BlogArticlesList from '@site/src/components/content/BlogArticlesList';
+import YouTubeSection from '@site/src/components/content/YouTubeSection';
 /* PAGE DATA */
 import { header, featureList, kubernetesBanner, compatibleTools } from '@site/static/data/home';
 
@@ -56,6 +57,7 @@ function IndexPage() {
       <InfoBanner {...kubernetesBanner} />
       <CompatibleToolSection />
       <TestimonialSection />
+      <YouTubeSection />
       <BlogArticlesList limit={4} title="Latest Podman News" titleColor="text-purple-700" containerLayout="grid" />
       <ColoringBookSection />
     </Layout>
