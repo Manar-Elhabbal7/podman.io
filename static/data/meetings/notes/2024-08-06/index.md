@@ -43,7 +43,7 @@ Large refactor for this change, so no backport are planned, it will only in Podm
 
 Links of Interest:
    * https://github.com/containers/podman/discussions/23352
-   * similar to <https://endoflife.date/docker-engine>
+   * similar to [https://endoflife.date/docker-engine](https://endoflife.date/docker-engine)
 Currently v5.2 is the only one in Supported status.  Recommendations from users that we post what End Of Life (EOL) is for the versions for Podman in the https://podman.io website.
 
 Is the ask to create an EOL statement when a version is released, or to create one at some point in time?  The thought for the moment is the sooner the better, but not necessarily right at the release date.
