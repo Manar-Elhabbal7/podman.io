@@ -9,7 +9,7 @@ Aditya Rajan, Anders F Björklund, Ashley Cui, Ed Santiago Munoz, Jake Correnti,
 
 1. passwd and group entry handling with `--user`, etc. [issue](https://github.com/containers/podman/issues/18903) - Justin Jereza
 2. ipfs integration into Podman - Anders Björklund to kick off
-	- See <https://github.com/containerd/nerdctl/blob/main/docs/ipfs.md>
+	- See [https://github.com/containerd/nerdctl/blob/main/docs/ipfs.md](https://github.com/containerd/nerdctl/blob/main/docs/ipfs.md)
   	it is about peer-to-peer image distribution, using OCI [estargz](https://github.com/containerd/stargz-snapshotter/blob/main/docs/INSTALL.md#install-stargz-store-for-cri-opodman-with-systemd) format
 	- Question for containers/image, fallback is `localhost:5050/ipfs/<CID>`
   	(proxy server from IPFS, started with `nerdctl ipfs registry serve`)

@@ -8,7 +8,7 @@ Anders F Björklund, Ashley Cui, Brent Baude, Ed Santiago Munoz, Gerry Seidman, 
 2) Podman aardvark DNS TCP - Paul Holzinger
 3) Statement about EOL date - Anders Björklund
    * https://github.com/containers/podman/discussions/23352
-   * similar to <https://endoflife.date/docker-engine>
+   * similar to [https://endoflife.date/docker-engine](https://endoflife.date/docker-engine)
 
 ## Meeting Start: 11:03 a.m. EDT
 ### Video [Recording](https://www.youtube.com/watch?v=q_OTd4zyN40)
