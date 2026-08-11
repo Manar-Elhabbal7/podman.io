@@ -1,0 +1,40 @@
+name: Scheduled YouTube Video Fetch
+
+on:
+  schedule:
+    # Run weekly on Wednesdays at midnight UTC (right after the first Tuesday meetings)
+    - cron: '0 0 * * 3'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Fetch Latest YouTube Video
+        run: node scripts/fetch-youtube.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Only commit if the file has actually changed
+          if git status --porcelain | grep -q "static/data/youtube.ts"; then
+            git add static/data/youtube.ts
+            git commit -m "chore: auto-update latest YouTube video data"
+            git push
+            echo "Changes pushed successfully!"
+          else
+            echo "No new video found. Up to date."
+          fi

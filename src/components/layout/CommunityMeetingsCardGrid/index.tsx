@@ -43,7 +43,7 @@ type SubcardButtonProps = {
 
 type SubcardGridProps = {
   buttons: SubcardButtonProps[];
-  icon: string;
+  icon?: string;
   date: string;
 };
 
@@ -94,7 +94,7 @@ function CommunityMeetingsCardGrid({ cards }) {
       let mdReader = mdFile?.default(useRef());
       mdReader?.props?.children?.forEach(child => {
         let field1: string = child?.props?.children?.[0];
-        let field2: any = child?.props?.children?.[1];
+        let field2: React.ReactElement<{ href?: string }> | undefined = child?.props?.children?.[1];
         if (typeof field1 == 'string' && (field1.includes('BlueJeans') || field1.includes('Video'))) {
           if (mdFile?.contentTitle?.includes('Cabal')) {
             cabalDropdownOptions.unshift({
@@ -168,7 +168,6 @@ function CommunityMeetingsCardGrid({ cards }) {
     let meeting = MeetingDropdownOptions.shift();
     communityMeetingsData.push({
       date: meeting?.date,
-      icon: 'film-icon',
       buttons: [
         {
           path: meeting?.meeting_recording?.link,
@@ -180,7 +179,6 @@ function CommunityMeetingsCardGrid({ cards }) {
     meeting = cabalDropdownOptions.shift();
     CabalMeetingsData.push({
       date: meeting?.date,
-      icon: 'film-icon',
       buttons: [
         {
           path: meeting?.meeting_recording?.link,

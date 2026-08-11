@@ -81,7 +81,7 @@ function CustomCard(props) {
       style={props.primary ? { maxHeight: '550px', flex: 1 } : {}}
       className="flex w-11/12 flex-col rounded-lg bg-gray-50 p-4 shadow-xl dark:bg-gray-700 dark:shadow-none lg:mx-8 lg:my-4">
       <CardHeader {...props} />
-      {props?.icon ? <FilmIcon /> : <CardBody {...props} />}
+      {props?.icon ? <FilmIcon /> : props?.text ? <CardBody {...props} /> : null}
       <CardInfoButtons {...props} />
     </article>
   );
