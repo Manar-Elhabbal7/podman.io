@@ -5,7 +5,7 @@ title: Podman Community Meeting
 
 ![Podman logo](../../../../vectors/raw/podman.svg)
 
-# {{ page.title }}
+# Podman Community Meeting
 
 ## October 6, 2020 11:00 a.m. Eastern
 

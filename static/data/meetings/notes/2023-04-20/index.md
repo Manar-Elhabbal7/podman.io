@@ -15,10 +15,10 @@ Attendees: Matt Heon, Paul Holzinger, Lokesh Mandvekar, Valentin Rothberg, Eduar
    - Drop Cgroup V1
    - ZSTD By default
    - podman build -> build farm support
-   - (refactor podman machine) <-- not "feature" but ...
+    - (refactor podman machine) \&lt;- not "feature" but ...
    - making manifest lists by default
    - Use OCI images for podman machine
-     - podman <-> podman machine versioning ...
+     - podman \&lt;-\&gt; podman machine versioning ...
    - assimilate podman machine services
 
 2. Bug week reminder/participation invitation - Matt Heon
@@ -38,10 +38,10 @@ Meeting started at 11:02 a.m. Thursday, April 20, 2023
 - Drop Cgroup V1 - Similar to dropping CNI and more important to Dan as systemd is about to drop support for cgroup v1. We are looking at Podman v5.0 for this too. We need to be sure that we don't mess up partners such as Ubuntu LTS. Another thing to watch for is Chromebook users use a Debian base, and that might be problematic too. Anders pointed out that his Ubuntu 22.04 has systemd/cgroups v2
 - ZSTD By default - using the ZSTD compression algorithm instead of gzip. Older versions of Docker don't support ZSTD, so that's a bit of a concern. The thought is to let the user pick or push to versions of the image. A lot quicker downloads with ZSTD over gzip. A problem with pushing two images, people may have to pay for storing or pushing multiple images. The thought is to default to ZSTD and allow users to configure back to gzip in their containers.conf file. The compression happens only during push/pull. The format of the image on disk or in the registry remains the same. Brent would like to get buy-in from Quay, but they won't likely step up until we, or someone else, starts using ZSTD more frequently. The Moby shipped with Fedora now uses ZSTD.
 - podman build -> build farm support - Nalin is working on this to allow building of an image for multiple architectures. Nalin is making it a very easy to specify with podman build command line options. You wouldn't need to deal with manifests nor have any need to deal with a second VM running another architecture, it would just work. It will build natively, not in emulation mode. Under development at the moment.
-- (refactor podman machine) <-- not "feature" but ... - After the Apple hypervisor work is complete, some refactoring of the podman machine might be a good thing to do for speed. This might be done earlier than Podman v5. Dan also noted that we're thinking about moving podman machine to a separate repo. We might draw more interest in contributing if we did move it.
+- (refactor podman machine) \&lt;- not "feature" but ... - After the Apple hypervisor work is complete, some refactoring of the podman machine might be a good thing to do for speed. This might be done earlier than Podman v5. Dan also noted that we're thinking about moving podman machine to a separate repo. We might draw more interest in contributing if we did move it.
 - making manifest lists by default - when you pull an image to a system, by default, you don't always get a list. If you have a multi-arch image, this can be a problem. Looking into being able to pull manifest lists down so multi-arch images could be better supported. The thinking is to turn this on by default in Podman v5 and then allow users to opt out of it. Matt is concerned that someone might get angry as manifest lists (JSON file) will show up that haven't been there before. Brent suggests we hide the lists as much as possible.
 - Use OCI images for podman machine
-- podman <-> podman machine versioning ... This allows you to enforce that the version of the client dictates the version of the guest podman machine. That way you run only the version that is supported in your environment. This also helps the development team by not needing to supporting multi version combinations.
+- podman \&lt;-\&gt; podman machine versioning ... This allows you to enforce that the version of the client dictates the version of the guest podman machine. That way you run only the version that is supported in your environment. This also helps the development team by not needing to supporting multi version combinations.
 - assimalate podman machine services - for running a podman machine depending on the hypervisor and the Operating System, it is required to have a number of services running due to a number of microservices. The talk is to move it all under one potentially.
 - Anders talked about some storage ideas (`ipfs://`) that had been kicked around in the past and is wondering if any work has gone on that. It would allow layers to be split across multiple files. This would be in c/storage. Matt thinks
   https://archive.fosdem.org/2022/schedule/event/container_ipfs_image/

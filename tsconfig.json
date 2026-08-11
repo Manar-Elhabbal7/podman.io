@@ -1,9 +1,9 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
-    "typeRoots": ["node_modules/@types", "src/types"],
+    "jsx": "react-jsx",
+    "module": "Node16",
     "baseUrl": "."
-  }
+  },
+  "include": ["src/**/*", "types.d.ts"]
 }

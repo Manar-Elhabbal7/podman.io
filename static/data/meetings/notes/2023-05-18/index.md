@@ -42,7 +42,7 @@ Dan thinks we can handle this, but we need more work on the file system. Dan is 
 
 THere was a change to containers/storage by an outside of Red Hat contributor, but it wasn't completed. There were problems with the fuse file system, and the folks working for Red Hat weren't able to prioritize tracking down the issue.
 
-Side note: here was the project mentioned briefly, which works in the kubernetes context for mirroring images from the registry <https://github.com/XenitAB/spegel> (probably more for CRI-O)
+Side note: here was the project mentioned briefly, which works in the kubernetes context for mirroring images from the registry [https://github.com/XenitAB/spegel](https://github.com/XenitAB/spegel) (probably more for CRI-O)
 
 ### podman.io demo - (21:58 in the video) - Ashley Cui - 20
 
